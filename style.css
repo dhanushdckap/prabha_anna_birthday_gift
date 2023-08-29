@@ -33,6 +33,11 @@ a:hover {
 
 canvas {
   border: 1px solid #efefef;
-
+  height: 32rem;
+  width: 30rem;
   margin-bottom: 1rem;
+}
+
+audio{
+  display: none;
 }

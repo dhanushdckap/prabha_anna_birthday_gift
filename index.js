@@ -4,6 +4,14 @@ const randomArrayValue = arr => arr[Math.floor(Math.random() * arr.length)];
 const randomBetween = (min, max) => Math.random() * (max - min) + min;
 const distanceBetween = (vec1, vec2) => Math.hypot(vec2.x - vec1.x, vec2.y - vec1.y);
 const getPixelIndex = ({ x, y }, imageWidth) => (~~x + ~~y * imageWidth) * 4;
+const Song = document.querySelector("audio");
+
+
+window.addEventListener("DOMContentLoaded",()=>{
+let song = './images/yt1s.com_-_Nenjukul_peidhidum_Maamazhai_love_feeling_bgm_WhatsApp_status_song_new_.mp3';
+Song.src = song;
+Song.play();
+})
 
 const PI2 = Math.PI * 2;
 
@@ -12,7 +20,7 @@ class Poisson {
   constructor(r, k = 30) {
     this.r = r;
     this.k  = k;
-    this.cellSize = Math.floor(this.r / Math.sqrt(2));
+    this.cellSize = Math.floor(this.r / Math.sqrt(4));
 
     this.grid = [];
     this.activeList = [];
@@ -198,14 +206,14 @@ const start = async () => {
 
   const { width, height } = visual;
 
-  const poisson = new Poisson(4);
+  const poisson = new Poisson(3);
   poisson.init(width, height);
 
   const pointsStart = [
-    { x: 50, y: 50 },
-    { x: width - 50, y: 50 },
-    { x: width - 50, y: height - 50 },
-    { x: 50, y: height - 50 },
+    { x: 100, y: 100 },
+    { x: width - 100, y: 100 },
+    { x: width - 100, y: height - 100 },
+    { x: 100, y: height - 100 },
     { x: width * 0.5, y: height * 0.5 },
   ];
 
